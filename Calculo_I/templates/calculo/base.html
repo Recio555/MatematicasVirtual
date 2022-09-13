@@ -1,0 +1,57 @@
+{% load i18n static %}<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    
+	<title>{% block title %}{% endblock %}</title
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="/">BookTime</a>
+ <button
+ class="navbar-toggler" 
+type="button"
+ data-toggle="collapse"
+ data-target="#navbarSupportedContent">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+ <div
+ class="collapse navbar-collapse"
+ id="navbarSupportedContent">
+ <ul class="navbar-nav mr-auto">
+ <li
+ class="nav-item">
+ <a class="nav-link" href="/">Home</a>
+ </li>
+ <li
+ class="nav-item">
+ <a class="nav-link" href="/about-us/">About us</a>
+ </li>
+ </ul>
+ </div>
+</nav>
+	
+  </head>
+  
+  <body>
+    <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-2">
+      {% block sidebar %}
+      <ul class="sidebar-nav">
+          <li><a href="{% url 'home' %}">loging</a></li>
+          <li><a href="admin">CalculoI</a></li>
+          <li><a href="{% url 'home' %}">Inicio</a></li>
+      </ul>
+     {% endblock %}
+      </div>
+      <div class="col-sm-10 ">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+
+  </div>
+  
+  </body>
+</html>
+
